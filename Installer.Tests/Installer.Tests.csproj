@@ -7,8 +7,8 @@
     <ProjectGuid>{590B0308-EE72-4303-A7ED-BF4CCD4FCCC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Installer.Tests</RootNamespace>
-    <AssemblyName>Installer.Tests</AssemblyName>
+    <RootNamespace>DeathlyEnterprises.Games._7dtd.Installer.Tests</RootNamespace>
+    <AssemblyName>DeathlyEnterprises.Games.7dtd.Installer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
