@@ -65,14 +65,6 @@
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <PropertyGroup>
-    <WixToolPath>$(SolutionDir)packages\WiX.Toolset.2015.3.10.0.1502\tools\wix\</WixToolPath>
-    <WixTargetsPath>$(WixToolPath)wix.targets</WixTargetsPath>
-    <WixTasksPath>$(WixToolPath)WixTasks.dll</WixTasksPath>
-  </PropertyGroup>
   <Import Project="$(WixTargetsPath)" />
   <Target Name="BeforeBuild">
     <!-- Get the programs assembly version from the .exe file -->
