@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="DeathlyModApi for 7 Days To Die" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Deathly Enterprises" UpgradeCode="f7f25a2b-4546-44d2-aa7c-5a76da1970e0">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="DeathlyEnterprises" Name="Deathly Enterprises" >
+          <Directory Id="DeathlyModApi" Name="DeathlyModApi" >
+            <Directory Id="INSTALLFOLDER" Name="7DTD" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ManagerComponent">
+        <File Source="$(var.Manager.TargetPath)" />
+      </Component>
+			<Component Id="ModApiComponent">
+        <File Source="$(var.ModApi.TargetPath)" />
+			</Component>
+      <Component Id="ModLoaderComponent">
+        <File Source="$(var.ModLoader.TargetPath)" />
+      </Component>
+      <Component Id="ModLoaderInstallerComponent">
+        <File Source="$(var.ModLoaderInstaller.TargetPath)" />
+      </Component>
+      <Component Id="UtilityComponent">
+        <File Source="$(var.Utility.TargetPath)" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
